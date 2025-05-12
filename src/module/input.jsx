@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Form, InputGroup } from "react-bootstrap";
 import SendButton from "./button";
 import "./input.css";
-import VoiceInputButton from "./vocieInput";
+import VoiceInputButton from "./voiceInput";
 
 function ChatInput({ onSend }) {
   const [message, setMessage] = useState("");

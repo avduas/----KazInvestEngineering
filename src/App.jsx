@@ -5,7 +5,7 @@ import "./App.css";
 import ChatInput from "./module/input";
 
 function App() {
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSend = async (message) => {
@@ -39,13 +39,13 @@ function App() {
         or ask your own question
       </p>
       
+      <ChatInput onSend={handleSend} disabled={isLoading} />
+      
       {isLoading && (
         <div className="mt-4">
           <Spinner animation="border" variant="light" />
         </div>
       )}
-
-      <ChatInput onSend={handleSend} disabled={isLoading} />
 
       {response && (
         <div className="mt-4 p-3 bg-dark text-light rounded">
