@@ -1,0 +1,23 @@
+.bg-primary-custom {
+  background-color: rgb(8, 46, 106);
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem;
+  margin-top: 120px;
+}
+
+.textDiv {
+  margin: 50px 60px 
+}
