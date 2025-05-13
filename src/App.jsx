@@ -39,9 +39,11 @@ function App() {
         Use one of the most common prompts below<br />
         or ask your own question
       </p>
-      
-      <ChatInput onSend={handleSend} disabled={isLoading} />
-      
+
+      {!isLoading && (
+        <ChatInput onSend={handleSend} disabled={isLoading} />
+      )}
+
       {isLoading && (
         <div className="mt-4">
           <Spinner animation="border" variant="light" />
