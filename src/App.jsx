@@ -40,15 +40,7 @@ function App() {
         or ask your own question
       </p>
 
-      {!isLoading && (
-        <ChatInput onSend={handleSend} disabled={isLoading} />
-      )}
-
-      {isLoading && (
-        <div className="mt-4">
-          <Spinner animation="border" variant="light" />
-        </div>
-      )}
+      <ChatInput onSend={handleSend} isLoading={isLoading} />
 
       {response && (
         <div className="mt-4 p-3 bg-dark text-light rounded">

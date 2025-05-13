@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup, Spinner } from "react-bootstrap";
 import SendButton from "./button";
 import "./input.css";
 import VoiceInputButton from "./voiceInput";
 
-function ChatInput({ onSend }) {
+function ChatInput({ onSend, isLoading }) {
+console.log("isLoading:", isLoading);
   const [message, setMessage] = useState("");
 
   const handleSend = () => {
@@ -30,7 +31,13 @@ function ChatInput({ onSend }) {
         className="bg-transparent border-0 text-white"
       />
 
-      <SendButton onClick={handleSend} />
+      {isLoading ? (
+        <div className="d-flex align-items-center px-3">
+          <Spinner animation="border" variant="light" size="sm" />
+        </div>
+      ) : (
+        <SendButton onClick={handleSend} />
+      )}
     </InputGroup>
   );
 }
